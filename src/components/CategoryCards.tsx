@@ -35,9 +35,21 @@ export function CategoryCards() {
 
         return (
           // Use Card component to display values by category
-          <div>
-            {category.label} - ฿{categoryTotal.toFixed(2)}
-          </div>
+          <Card key={category.id}>
+            <CardHeader>
+              <div>
+                {iconMap[category.label]}
+              </div>
+              <CardTitle className="font-medium">
+                {category.label}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-lg font-bold">
+                ฿{categoryTotal.toFixed(2)}
+              </div>
+            </CardContent>
+          </Card>
         );
       })}
     </div>
